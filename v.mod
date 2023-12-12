@@ -1,7 +1,7 @@
 Module {
 	name: 'vstr'
-	description: ''
-	version: '0.0.0'
+	description: 'A library for string'
+	version: '0.0.1'
 	license: 'MIT'
 	dependencies: []
 }

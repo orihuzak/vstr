@@ -1,13 +1,13 @@
 module vstr
 
-fn test_only_en_letter() {
-	assert only_en_letter('amz') == true
-	assert only_en_letter('AMZ') == true
-	assert only_en_letter('aMz') == true
-	assert only_en_letter('a5z') == false
-	assert only_en_letter('a🧊z') == false
-	assert only_en_letter('aまz') == false
-	assert only_en_letter('a%z') == false
+fn test_is_en_letters() {
+	assert is_en_letters('amz') == true
+	assert is_en_letters('AMZ') == true
+	assert is_en_letters('aMz') == true
+	assert is_en_letters('a5z') == false
+	assert is_en_letters('a🧊z') == false
+	assert is_en_letters('aまz') == false
+	assert is_en_letters('a%z') == false
 }
 
 fn test_is_en_letter() {
