@@ -18,3 +18,8 @@ fn test_is_en_letter() {
 	assert false == is_en_letter(`5`)
 	assert false == is_en_letter(`🫠`)
 }
+
+fn test_capitalie() {
+	assert capitalize('hello') == 'Hello'
+	assert capitalize('heLLO') == 'Hello'
+}

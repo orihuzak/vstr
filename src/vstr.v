@@ -7,3 +7,7 @@ pub fn is_en_letters(s string) bool {
 pub fn is_en_letter(c rune) bool {
 	return (c >= `a` && c <= `z`) || (c >= `A` && c <= `Z`)
 }
+
+pub fn capitalize(s string) string {
+	return s.to_lower().capitalize()
+}
