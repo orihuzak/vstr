@@ -23,3 +23,17 @@ fn test_capitalie() {
 	assert capitalize('hello') == 'Hello'
 	assert capitalize('heLLO') == 'Hello'
 }
+
+fn test_align() {
+	texts := Strings([
+		'test: test',
+		'testtest: test',
+		'testte: test',
+	])
+	want := [
+		'    test: test',
+		'testtest: test',
+		'  testte: test',
+	]
+	assert texts.align_by_sep(':') == want
+}
