@@ -41,12 +41,17 @@ pub fn (a Strings) align_by_sep(separator string) Strings {
 }
 
 // rune_space_size returns the number of rune types in s
-// Other name candidates
-// - `count_unique_runes`
 pub fn rune_space_size(s string) int {
-	mut rune_space := map[rune]int{}
+	space := rune_space(s)
+	return space.len
+}
+
+pub fn rune_space(s string) []rune {
+	mut space := []rune{cap:s.len}
 	for r in s.runes() {
-		rune_space[r] += 1
+		if r !in space {
+			space << r
+		}
 	}
-	return rune_space.len
+	return space
 }

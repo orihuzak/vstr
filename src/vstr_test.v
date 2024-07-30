@@ -38,17 +38,29 @@ fn test_align() {
 	assert texts.align_by_sep(':') == want
 }
 
-struct SpaceCase {
+struct SpaceSizeCase {
 	input string
 	want  int
 }
 
 fn test_rune_space_size() {
 	cases := [
-		SpaceCase{'YYYYMMDD', 3},
-		SpaceCase{'しんぶんし', 3},
+		SpaceSizeCase{'YYYYMMDD', 3},
+		SpaceSizeCase{'しんぶんし', 3},
 	]
 	for case in cases {
 		assert rune_space_size(case.input) == case.want
 	}
+}
+
+struct SpaceCase {
+	input string
+	want  []rune
+}
+
+fn test_rune_space() {
+	cases := [
+		SpaceCase{'successfully', [`s`, `u`, `c`, `e`, `f`, `l`, `y`]},
+		SpaceCase{'しんぶんし', [`し`, `ん`, `ぶ`]},
+	]
 }
