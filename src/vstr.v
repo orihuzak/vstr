@@ -47,11 +47,18 @@ pub fn rune_space_size(s string) int {
 }
 
 pub fn rune_space(s string) []rune {
-	mut space := []rune{cap:s.len}
+	mut space := []rune{cap: s.len}
 	for r in s.runes() {
 		if r !in space {
 			space << r
 		}
 	}
 	return space
+}
+
+pub fn is_first_rune(s string, ch rune) bool {
+	if s.len == 0 {
+		return false
+	}
+	return s.trim_space_left()[0] == ch
 }

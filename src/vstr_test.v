@@ -64,3 +64,7 @@ fn test_rune_space() {
 		SpaceCase{'しんぶんし', [`し`, `ん`, `ぶ`]},
 	]
 }
+
+fn test_is_first_char() {
+	assert is_first_char(' > hello', `>`) == true
+}
