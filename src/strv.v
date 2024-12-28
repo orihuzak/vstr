@@ -9,12 +9,16 @@ pub fn (o EmptyIsNoneString) opt_str() ?string {
 	return o.inner
 }
 
-pub fn EmptyIsNoneString.new(s string) EmptyIsNoneString {
+pub fn EmptyIsNoneString.new(s ?string) EmptyIsNoneString {
 	return EmptyIsNoneString{
-		inner: if s.len == 0 {
-			none
-		} else {
+		inner: if s == none {
 			s
+		} else {
+			if s.len == 0 {
+				none
+			} else {
+				s
+			}
 		}
 	}
 }
