@@ -12,6 +12,11 @@ fn test_non_empty_string() {
 		eprintln(err)
 		assert true
 	}
+	s := NonEmptyString.new('hello') or {
+		assert false
+		return
+	}
+	assert s.str() == 'hello'
 }
 
 fn test_is_en_letters() {
@@ -79,6 +84,6 @@ fn test_rune_space() {
 	]
 }
 
-fn test_is_first_char() {
-	assert is_first_char(' > hello', `>`) == true
+fn test_is_first_rune() {
+	assert is_first_rune(' > hello', `>`)
 }

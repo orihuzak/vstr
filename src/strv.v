@@ -30,6 +30,10 @@ pub fn NonEmptyString.new(s string) !NonEmptyString {
 	return NonEmptyString{s}
 }
 
+pub fn (s NonEmptyString) str() string {
+	return s.inner
+}
+
 pub fn is_en_letters(s string) bool {
 	return s.runes().all(is_en_letter(it))
 }
