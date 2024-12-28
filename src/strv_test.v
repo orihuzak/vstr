@@ -1,4 +1,4 @@
-module vstr
+module strv
 
 fn test_empty_is_none_string() {
 	s := EmptyIsNoneString.new('')

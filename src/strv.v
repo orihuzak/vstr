@@ -1,4 +1,4 @@
-module vstr
+module strv
 
 // Empty string -> none
 pub struct EmptyIsNoneString {
