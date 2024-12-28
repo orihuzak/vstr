@@ -1,5 +1,35 @@
 module vstr
 
+// Empty string -> none
+pub struct EmptyIsNoneString {
+	inner ?string
+}
+
+pub fn (o EmptyIsNoneString) opt_str() ?string {
+	return o.inner
+}
+
+pub fn EmptyIsNoneString.new(s string) EmptyIsNoneString {
+	return EmptyIsNoneString{
+		inner: if s.len == 0 {
+			none
+		} else {
+			s
+		}
+	}
+}
+
+pub struct NonEmptyString {
+	inner string
+}
+
+pub fn NonEmptyString.new(s string) !NonEmptyString {
+	if s.len == 0 {
+		return error('non empty string required')
+	}
+	return NonEmptyString{s}
+}
+
 pub fn is_en_letters(s string) bool {
 	return s.runes().all(is_en_letter(it))
 }

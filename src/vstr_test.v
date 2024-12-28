@@ -1,5 +1,19 @@
 module vstr
 
+fn test_empty_is_none_string() {
+	s := EmptyIsNoneString.new('')
+	if s.opt_str() == none {
+		assert true
+	}
+}
+
+fn test_non_empty_string() {
+	NonEmptyString.new('') or {
+		eprintln(err)
+		assert true
+	}
+}
+
 fn test_is_en_letters() {
 	assert is_en_letters('amz') == true
 	assert is_en_letters('AMZ') == true
