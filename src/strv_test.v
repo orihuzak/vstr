@@ -1,18 +1,18 @@
 module strv
 
 fn test_empty_is_none_string() {
-	s := EmptyIsNoneString.new('')
+	s := ZeroIsNoneString.new('')
 	if s.opt_str() == none {
 		assert true
 	}
 }
 
 fn test_non_empty_string() {
-	NonEmptyString.new('') or {
+	NonZeroString.new('') or {
 		eprintln(err)
 		assert true
 	}
-	s := NonEmptyString.new('hello') or {
+	s := NonZeroString.new('hello') or {
 		assert false
 		return
 	}

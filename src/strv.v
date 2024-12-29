@@ -1,16 +1,15 @@
 module strv
 
-// Empty string -> none
-pub struct EmptyIsNoneString {
+pub struct ZeroIsNoneString {
 	inner ?string
 }
 
-pub fn (o EmptyIsNoneString) opt_str() ?string {
+pub fn (o ZeroIsNoneString) opt_str() ?string {
 	return o.inner
 }
 
-pub fn EmptyIsNoneString.new(s ?string) EmptyIsNoneString {
-	return EmptyIsNoneString{
+pub fn ZeroIsNoneString.new(s ?string) ZeroIsNoneString {
+	return ZeroIsNoneString{
 		inner: if s == none {
 			s
 		} else {
@@ -23,18 +22,18 @@ pub fn EmptyIsNoneString.new(s ?string) EmptyIsNoneString {
 	}
 }
 
-pub struct NonEmptyString {
+pub struct NonZeroString {
 	inner string
 }
 
-pub fn NonEmptyString.new(s string) !NonEmptyString {
+pub fn NonZeroString.new(s string) !NonZeroString {
 	if s.len == 0 {
 		return error('non empty string required')
 	}
-	return NonEmptyString{s}
+	return NonZeroString{s}
 }
 
-pub fn (s NonEmptyString) str() string {
+pub fn (s NonZeroString) str() string {
 	return s.inner
 }
 
