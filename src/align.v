@@ -2,13 +2,11 @@ module strv
 
 import strings
 
-pub type Align = map[string]string
-
-pub fn (a &Align) aligned_str() string {
+pub fn align(m map[string]string) string {
 	pad := ' '
-	max_len := max_length_with_multi_bytes(a.keys())
+	max_len := max_length_with_multi_bytes(m.keys())
 	mut buf := strings.new_builder(100)
-	for k, v in a {
+	for k, v in m {
 		pad_len := max_len - length_with_multi_bytes(k)
 		buf.write_string2(k, ': ')
 		if pad_len > 0 {
