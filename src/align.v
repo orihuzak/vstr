@@ -2,7 +2,7 @@ module strv
 
 import strings
 
-pub fn align(m map[string]string) string {
+pub fn align(m &map[string]string) string {
 	pad := ' '
 	max_len := max_length_with_multi_bytes(m.keys())
 	mut buf := strings.new_builder(100)

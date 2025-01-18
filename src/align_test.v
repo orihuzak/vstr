@@ -5,7 +5,7 @@ fn test_align() {
 
 	m['hello'] = '100'
 	m['ありがと'] = '2'
-	assert align(m) == 'hello:    100
+	assert align(&m) == 'hello:    100
 ありがと: 2
 '
 }
